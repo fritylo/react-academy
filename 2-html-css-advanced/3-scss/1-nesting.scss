@@ -1,0 +1,15 @@
+.dog { // .dog
+    .head { // .dog .head
+        .eye { // .dog .head .eye
+            color: blue;
+        }
+    }
+
+    &.black { // .dog.black
+        color: black;
+    }
+
+    &__body { // .dog__body
+        color: white;
+    }
+}

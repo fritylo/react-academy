@@ -1,0 +1,7 @@
+@mixin border-radius($size) {
+    border-radius: $size * 1px;
+}
+
+.my-class {
+    @include border-radius(3);
+}

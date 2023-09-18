@@ -1,0 +1,14 @@
+body {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.counter {
+	border: 1px solid lightgrey;
+	border-radius: 0.5em;
+	padding: 1em;
+	margin-bottom: 0.5em;
+}
+
+.counter h2 {
+	margin-top: 0.5em;
+}

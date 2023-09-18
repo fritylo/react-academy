@@ -1,0 +1,39 @@
+// =====
+// LISTS
+// =====
+
+$listA: 1px, 1, 'hello', anything;
+$listB: (1px, 1, 'hello', anything);
+
+$_: append($listA, 10px 20px 30px); // 1px, 1, 'hello', anything, 10px, 20px, 30px
+$_: index(1px solid red, 1px); // 1
+$_: join(1 2 3, 4 5 6); // 1 2 3 4 5 6
+$_: length(1 2 3 4 5 6); // 6
+$_: nth(6vw 5vw 4vw 3vw 2vw 1vw, 2); // 5vw
+$_: set-nth(1px 2px 3px 4px 5px, 2, 10px); // 1px 10px 3px 4px 5px
+
+
+// ====
+// MAPS
+// ====
+
+$mapA: (
+    'key': value,
+);
+
+$font-weights: ('regular': 400, 'medium': 500, 'bold': 700);
+$_: map-get($font-weights, 'regular'); // 400
+
+$fonts: (
+  'Helvetica': (
+    'weights': (
+      'regular': 400,
+      'medium': 500,
+      'bold': 700,
+    ),
+  ),
+);
+$_: map-get($fonts, "Helvetica", "weights", "regular"); // 400
+$_: map-get($fonts, "Helvetica", "colors"); // null
+
+$font-weight-names: map-keys($font-weights); // ('regular', 'medium', 'bold')

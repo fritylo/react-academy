@@ -1,0 +1,48 @@
+<div class="wrapper" level="1">
+    <div class="wrapper" level="2">
+        <div class="wrapper" level="3">
+            <div class="wrapper" level="4">
+                <div class="wrapper" level="5">
+                    <button>
+                        Click Me!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Button
+
+    const button = document.querySelector('button');
+
+    button.addEventListener('click', handleButtonClick);
+
+    function handleButtonClick(e) {
+        const { target, currentTarget } = e;
+
+        console.log('Button click!', {
+            target, 
+            currentTarget 
+        });
+    }
+
+    // Wrappers
+
+    const wrappers = document.querySelectorAll('.wrapper');
+
+    wrappers.forEach(el => {
+        el.addEventListener('click', handleWrapperClick);
+    })
+
+    function handleWrapperClick(e) {
+        const { target, currentTarget } = e;
+        const level = e.currentTarget.attributes.level.value;
+
+        console.log(`Wrapper #${level} click!`, {
+            target, 
+            currentTarget 
+        });
+    }
+</script>

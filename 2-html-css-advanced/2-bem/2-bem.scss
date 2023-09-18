@@ -1,0 +1,16 @@
+.dog {
+    &__head { color: blue; }
+    &__body { color: blue; }
+}
+
+.dog-head {
+    &__eye {
+        &_color {
+            &_blue { color: blue; }
+            &_green { color: blue; }
+        }
+    }
+
+    &__nose { color: blue; }
+    &__mouth { color: blue; }
+}

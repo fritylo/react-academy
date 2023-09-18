@@ -1,0 +1,22 @@
+<a id="link" href="https://google.com">
+    Go to google.com if authorized
+</a>
+
+<script>
+    function authorize() {
+        const login = prompt('Login:');
+        const password = prompt('Password:');
+
+        const isAuthorized = login === 'admin' && password === '1234';
+        return isAuthorized;
+    }
+
+    link.addEventListener('click', (e) => {
+        const isAuthorized = authorize();
+
+        if (!isAuthorized) {
+            e.preventDefault();
+            alert('Invalid credentials');
+        }
+    })
+</script>

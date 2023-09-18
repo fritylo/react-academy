@@ -1,0 +1,20 @@
+.counter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&__value {
+		font-size: 2em;
+		text-align: center;
+	}
+
+	&__buttons {
+		> * + * {
+			margin-left: 0.5em;
+		}
+	}
+
+	&__button {
+		width: 5em;
+	}
+}

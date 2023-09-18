@@ -1,0 +1,101 @@
+<example> <!-- 1) ======================-->
+    <style>
+        cat#alex.big.long[parent="madonna"] { color: blue; }
+    </style>
+
+    <cat id="alex" class="big long" parent="madonna"></cat>
+</example>
+
+<example> <!-- 2) ======================-->
+    <style>
+        .dog .eye { color: blue; }
+    </style>
+
+    <div class="dog">
+        <div class="eye">(!)</div>
+        <div class="head">
+            <div class="eye">(!)</div>
+        </div>
+    </div>
+</example>
+
+<example> <!-- 3) ======================-->
+    <style>
+        .dog > .eye { color: blue; }
+    </style>
+
+    <div class="dog">
+        <div class="eye">(!)</div>
+        <div class="head">
+            <div class="eye">(X)</div>
+        </div>
+    </div>
+</example>
+
+<example> <!-- 4) ======================-->
+    <style>
+        .nose ~ .eye { color: blue; }
+    </style>
+
+    <div class="spider-with-two-heads">
+        <div class="head">
+            <div class="eye">(X)</div>
+            <div class="eye">(X)</div>
+            <div class="nose"></div>
+            <div class="eye">(!)</div>
+            <div class="eye">(!)</div>
+        </div>
+        
+        <div class="head">
+            <div class="eye">(X)</div>
+            <div class="eye">(X)</div>
+        </div>
+    </div>
+</example>
+
+<example> <!-- 5) ======================-->
+    <style>
+        .paragraph::before {
+            content: 'I am before';
+            display: block;
+        }
+        .paragraph::after {
+            content: 'I am after';
+            display: block;
+        }
+    </style>
+
+    <p class="paragraph">
+
+        <!-- I am before -->
+        Text
+        <!-- I am after -->
+    </p>
+</example>
+
+<example> <!-- 6) ======================-->
+    <style>
+        .item:first-child { color: blue; }          /* 1 */
+        .item:last-child { color: blue; }           /* 2 */
+        
+        .item:nth-child(3) { color: pink; }         /* 3 */
+        .item:nth-child(3n+2) { font-style: italic; } /* 4 */
+        .item:nth-child(even) { background: grey; } /* 5 */
+        .item:nth-child(odd) { background: black; } /* 6 */
+
+        .item:not(.classic) { font-weight: bold; }    /* 7 */
+    </style>
+
+    <ul class="array">
+        <li class="item" n="1">1, 6, 7</li>
+        <li class="item" n="2">4, 5, 7</li>
+        <li class="item" n="3">3, 6, 7</li>
+        <li class="item" n="4">5, 7</li>
+        <li class="item classic" n="5">4, 6</li>
+        <li class="item" n="6">5, 7</li>
+        <li class="item" n="7">6, 7</li>
+        <li class="item" n="8">4, 5, 7</li>
+        <li class="item" n="9">6, 7</li>
+        <li class="item" n="10">2, 5, 7</li>
+    </ul>
+</example>

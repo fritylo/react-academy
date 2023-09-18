@@ -1,0 +1,7 @@
+@function sum($a, $b) {
+    @return $a + $b;
+}
+
+$_: sum(1px, 2px); // 3px
+$_: sum(1vw, 2vw); // 3vw
+$_: sum(1px, 1em); // Error

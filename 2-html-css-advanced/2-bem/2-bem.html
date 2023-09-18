@@ -1,0 +1,46 @@
+<!-- Не правильно -->
+
+<div class="dog">
+    <div class="dog__head">
+        <div class="dog__head__eye_color_blue"></div> <!-- Модификатор без элемента -->
+        <div class="dog__head__nose"></div> <!-- Вложенность элементов больше чем 1 -->
+        <div class="dog__head__mouth"></div>
+        <div class="dog__head__eye_color_green"></div> <!-- Модификатор без элемента -->
+    </div>
+    <div class="body"> <!-- Новый блок, хотя должен быть элемент (?) -->
+        <div class="body__legs">
+            <div class="legs__leg"></div> <!-- Элемент, хотя нет блока legs выше -->
+            <div class="legs__leg"></div> <!-- Тавтология -->
+            <div class="legs__leg"></div>
+            <div class="legs__leg"></div>
+        </div>
+        <div class="dog__tail"></div> <!-- Перемешались блоки body и dog -->
+    </div>
+</div>
+
+<!-- Правильно-->
+
+<div class="dog">
+    <div class="dog__head dog-head">
+        <div class="dog-head__eye dog-head__eye_color_blue"></div>
+        <div class="dog-head__nose"></div>
+        <div class="dog-head__mouth"></div>
+        <div class="dog-head__eye dog-head__eye_color_green"></div>
+    </div>
+    <div class="dog__body">
+        <div class="dog__legs">
+            <div class="dog__leg"></div>
+            <div class="dog__leg"></div>
+            <div class="dog__leg"></div>
+            <div class="dog__leg"></div>
+        </div>
+        <div class="dog__tail"></div>
+    </div>
+</div>
+
+<!--
+    Вариации синтаксиса:
+    * block-name__elem-name_mod-name
+    * block-name__elem-name_mod-prop_mod-val
+    * blockName--elemName-modProp-modVal
+-->
