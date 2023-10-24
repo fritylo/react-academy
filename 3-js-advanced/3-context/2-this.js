@@ -26,7 +26,7 @@ const dog = {
 dog.run(); // position.x = 3
 dog.jump(); // position.y = 2 >>> position.y = 0
 
-const run = dog.run();
+const run = dog.run;
 run(); // this = window || globalThis
 
 const validRun1 = () => dog.run();
