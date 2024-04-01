@@ -1,7 +1,7 @@
 import cn from "classnames";
 import s from "./Examples.module.scss";
 
-import { useCallback, useMemo, useReducer, useRef, useState } from "react";
+import { memo, useCallback, useMemo, useReducer, useRef, useState } from "react";
 
 interface IProps {
 	className?: string;
@@ -14,9 +14,9 @@ export const Examples: React.FC<IProps> = ({ className }) => {
 				<h3>Examples</h3>
 			</center>
 
-			<Example1 />
-			<Example2 />
-			<Example3 />
+			{/*<Example1 />*/}
+			{/*<Example2 />*/}
+			{/*<Example3 />*/}
 			<Example4 />
 		</div>
 	);
@@ -26,8 +26,8 @@ const Example1: React.FC = () => {
 	const [count, setCount] = useState(0);
 
 	const handleButtonClick = () => {
-		setCount(count + 1);
-		setCount(count + 1);
+		setCount((v) => v + 1);
+		setCount((count) => count + 1);
 	};
 
 	return (
@@ -98,7 +98,7 @@ const Example4: React.FC = () => {
 
 	const [, rerender] = useReducer((v) => v + 1, 0);
 
-	const changeParentState = () => rerender(); // TODO: Add useCallback
+	const changeParentState = useMemo(() => () => rerender(), []); // TODO: Add useCallback
 
 	return (
 		<div>
@@ -108,10 +108,10 @@ const Example4: React.FC = () => {
 		</div>
 	);
 };
-const Example4_Child: React.FC<{ changeParentState: () => void }> = ({ // TODO: Add memo
+const Example4_Child: React.FC<{ changeParentState: () => void }> = memo(({ // TODO: Add memo
 	changeParentState,
 }) => {
 	console.log("Render Child");
 
 	return <button onClick={changeParentState}>Change Parent State</button>;
-};
+});

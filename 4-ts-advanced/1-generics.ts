@@ -1,4 +1,4 @@
-function setProperty<T>(object: T, property: string, value: any) {
+function setProperty<Obj extends object, Keys extends keyof Obj>(object: Obj, property: Keys, value: Obj[Keys]) {
     return object[property] = value;
 }
 
@@ -8,7 +8,7 @@ const obj = {
     c: true,
 };
 
-setProperty(obj, 'a', false);
+setProperty(obj, 'b', 'asdasd');
 
 // Remove any
 // Use keyof

@@ -1,3 +1,4 @@
+import { List } from "@/components/List";
 import { Menu } from "@/components/Menu";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
 			<Menu />
 			<main>
 				<h1>Home page</h1>
+				<List />
 			</main>
 		</>
 	);

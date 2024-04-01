@@ -1,7 +1,7 @@
 type User = {
     id: number;
     age: number;
-    fullName: string;
+    fullName?: string;
     hasParent: boolean;
 }
 

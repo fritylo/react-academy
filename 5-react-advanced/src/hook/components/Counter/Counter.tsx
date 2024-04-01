@@ -35,7 +35,7 @@ export const Counter: React.FC<IProps> = ({ className }) => {
 		return () => {
 			log("Will Unmount");
 		};
-	});
+	}, []);
 
 	return (
 		<div className={cn(s.counter, className)}>

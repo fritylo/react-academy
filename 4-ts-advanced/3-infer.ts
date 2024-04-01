@@ -1,3 +1,12 @@
-type GetReturnType<T> = T extends (...args: any) => infer R ? R : never;
+const callbackNum = (a: number, b: number) => a + b;
+const callbackStr = (a: string, b: string) => a + b;
 
-type R2 = GetReturnType<() => void>;
+type TCallbackNum = typeof callbackNum;
+type TCallbackStr = typeof callbackStr;
+
+
+type GetReturnType<T> = T extends (...args: any) => infer R
+    ? R 
+    : never;
+
+type R2 = GetReturnType<TCallbackStr>;
